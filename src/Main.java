@@ -1,29 +1,38 @@
-public class Main{
+import java.util.Locale;
+import java.util.Scanner;
 
-    public static double distribuicaoBinomial(int n, int k, double p) {
-        return combinacao(n, k)
-                * Math.pow(p, k)
-                * Math.pow(1 - p, n - k);
-    }
+public class Main {
 
-    public static long combinacao(int n, int k) {
-        return fatorial(n) / (fatorial(k) * fatorial(n - k));
-    }
+    public static void main(String[] args) {
+        // O arquivo inputs possui uma sequencia de testes com numero de processadores, processadores minimos e probabilidades pré definidos.
+//        Path arquivo = Path.of("inputs");
+//
+//        try (BufferedReader leitor = Files.newBufferedReader(arquivo)) {
+//            String linha;
+//
+//            while ((linha = leitor.readLine()) != null) {
+//
+//            }
+//        } catch (IOException e) {
+//            System.err.println("Não foi possível ler o arquivo inputs: " + e.getMessage());
+//        }
 
-    public static long fatorial(int n) {
-        long resultado = 1;
+        Scanner scanner = new Scanner(System.in).useLocale(Locale.US);
+        System.out.print("Numero de servidores: ");
+        int n = scanner.nextInt();
+        System.out.print("Numero de servidores funcionando para o serviço funcionar (0 > k > n): ");
+        int k = scanner.nextInt();
+        System.out.print("Probabilidade do servidor está funcionando (0 > p > 1): ");
+        double p = scanner.nextDouble();
+        scanner.close();
 
-        for (int i = 2; i <= n; i++) {
-            resultado *= i;
+        if (p > 1 || k > n || p < 0 || k < 1 ) {
+            System.out.println("Valores Invalidos");
+        }else {
+            double probabilidade = Formula.probabilidadeServico(n, k, p);
+            System.out.println("Probabilidade de o servico funcionar: " + probabilidade);
+            Graph.exibir(n, k, p);
         }
-
-        return resultado;
     }
 
-    static void main() {
-        System.out.println(distribuicaoBinomial(10,3,0.8));
-        System.out.println(distribuicaoBinomial(10,8,0.8));
-        System.out.println(distribuicaoBinomial(5,3,0.9));
-        System.out.println(distribuicaoBinomial(10,9,0.1));
-    }
 }
