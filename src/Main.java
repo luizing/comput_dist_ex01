@@ -17,22 +17,6 @@ public class Main {
 //            System.err.println("Não foi possível ler o arquivo inputs: " + e.getMessage());
 //        }
 
-        Scanner scanner = new Scanner(System.in).useLocale(Locale.US);
-        System.out.print("Numero de servidores: ");
-        int n = scanner.nextInt();
-        System.out.print("Numero de servidores funcionando para o serviço funcionar (0 > k > n): ");
-        int k = scanner.nextInt();
-        System.out.print("Probabilidade do servidor está funcionando (0 > p > 1): ");
-        double p = scanner.nextDouble();
-        scanner.close();
-
-        if (p > 1 || k > n || p < 0 || k < 1 ) {
-            System.out.println("Valores Invalidos");
-        }else {
-            double probabilidade = Formula.probabilidadeServico(n, k, p);
-            System.out.println("Probabilidade de o servico funcionar: " + probabilidade);
-            Graph.exibir(n, k, p);
-        }
     }
 
 }

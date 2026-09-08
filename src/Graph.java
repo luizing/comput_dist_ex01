@@ -75,7 +75,7 @@ public class Graph extends JPanel {
 
         for (int k = 0; k <= n; k++) {
             int x = ESQUERDA + (int) java.lang.Math.round((double) k / n * largura);
-            double probabilidade = Formula.probabilidadeServico(n, k, p);
+            double probabilidade = DistribuicaBinomial.probabilidadeServico(n, k, p);
             int y = base - (int) java.lang.Math.round(probabilidade * altura);
 
             if (k == 0) {
@@ -98,7 +98,7 @@ public class Graph extends JPanel {
         g.draw(curva);
 
         int xInformado = ESQUERDA + (int) java.lang.Math.round((double) kInformado / n * largura);
-        double resultado = Formula.probabilidadeServico(n, kInformado, p);
+        double resultado = DistribuicaBinomial.probabilidadeServico(n, kInformado, p);
         int yInformado = base - (int) java.lang.Math.round(resultado * altura);
         g.setColor(new Color(190, 45, 45));
         g.fillOval(xInformado - 6, yInformado - 6, 12, 12);
