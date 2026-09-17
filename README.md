@@ -43,7 +43,7 @@ O programa pode ser executado de duas formas:
 Execute o programa sem argumentos. Os valores de `n`, `k` e `p` serão solicitados pelo terminal:
 
 ```bash
-java DistribuicaBinomial
+java Formula.DistribuicaBinomial
 ```
 
 #### Modo por argumentos
@@ -64,13 +64,13 @@ Onde:
 Exemplo sem gráfico:
 
 ```bash
-java DistribuicaBinomial 10 3 0.8 NONE
+java Formula.DistribuicaBinomial 10 3 0.8 NONE
 ```
 
 Exemplo com gráfico:
 
 ```bash
-java DistribuicaBinomial 10 3 0.8 GRAPH
+java Formula.DistribuicaBinomial 10 3 0.8 GRAPH
 ```
 
 O parâmetro `GRAPH` não diferencia letras maiúsculas de minúsculas, portanto `graph`, `Graph` e `GRAPH` possuem o mesmo efeito.

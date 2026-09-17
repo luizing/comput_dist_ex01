@@ -1,3 +1,5 @@
+package Formula;
+
 import java.util.Locale;
 import java.util.Objects;
 import java.util.Scanner;
@@ -55,6 +57,7 @@ public class DistribuicaBinomial {
             System.out.println("Probabilidade do servico estar disponivel: " + resultado);
 
             System.out.print("Exibir gráfico? (y/N)");
+            String _ = scanner.nextLine();
             String s = scanner.nextLine();
 
             if (Objects.equals(s, "y")){
@@ -83,7 +86,7 @@ public class DistribuicaBinomial {
 
         // Argumentos invalidos
         System.out.println("Uso:");
-        System.out.println("  java DistribuicaBinomial");
-        System.out.println("  java DistribuicaBinomial --binomial <n> <k> <p>");
+        System.out.println("  java Formula.DistribuicaBinomial");
+        System.out.println("  java Formula.DistribuicaBinomial <n> <k> <p> <g>");
     }
 }
