@@ -100,7 +100,7 @@ $$
 P_{sim} =
 \frac{\text{número de rodadas em que o serviço esteve disponível}}
 {\text{número total de rodadas}}
-$
+$$
 
 ### Execução
 
